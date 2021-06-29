@@ -37,17 +37,28 @@
             @endif
 
             <div class="container">
-                @foreach($employees as $employee)
-                    {{$employee->first_name}}
-                    {{$employee->last_name}}
-                    @foreach ($employee->departments as $department)
-                        <br>
-                        {{ $department->name }}
+                <table>
+                    <tr>
+                        <th></th>
+                        @foreach($departments as $department)
+                            <th>{{$department->name}}</th>
+                        @endforeach
+                    </tr>
+                    @foreach($employees as $employee)
+                        <tr>
+                            <td>{{$employee->first_name}} {{$employee->last_name}}</td>
+                            @foreach($departments as $department)
+                                <td>
+                                    @foreach ($employee->departments as $employee_department)
+                                        @if ($employee_department->id === $department->id)
+                                            +
+                                        @endif
+                                    @endforeach
+                                </td>
+                            @endforeach
+                        </tr>
                     @endforeach
-                    <br>
-                    <br>
-                    <br>
-                @endforeach
+                </table>
             </div>
         </div>
     </body>
