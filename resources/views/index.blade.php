@@ -20,3 +20,45 @@
         }
     </style>
 </head>
+
+<body class="antialiased">
+
+<div class="relative flex items-top justify-center min-h-screen">
+
+    <div class="container">
+        <div id="app">
+            <router-link :to="{name: 'Grid'}" class="btn btn-success">Главная</router-link>
+            <router-link :to="{name: 'EmployeesIndex'}" class="btn btn-success">Сотрудники</router-link>
+            <router-link :to="{name: 'DepartmentsIndex'}" class="btn btn-success">Отделы</router-link>
+            <router-view></router-view>
+
+        </div>
+        {{--<table>
+            <tr>
+                <th></th>
+                @foreach($departments as $department)
+                    <th>{{$department->name}}</th>
+                @endforeach
+            </tr>
+            @foreach($employees as $employee)
+                <tr>
+                    <td>{{$employee->first_name}} {{$employee->last_name}}</td>
+                    @foreach($departments as $department)
+                        <td>
+                            @foreach ($employee->departments as $employee_department)
+                                @if ($employee_department->id === $department->id)
+                                    +
+                                @endif
+                            @endforeach
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+        </table>--}}
+    </div>
+</div>
+
+</body>
+
+<script src="{{ mix('/js/app.js') }}"></script>
+</html>

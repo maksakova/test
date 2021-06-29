@@ -16,7 +16,7 @@ class GridController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('grid', [
+        return view('index', [
             'employees'   => Employee::with('departments')->get(),
             'departments' => Department::get()
         ]);

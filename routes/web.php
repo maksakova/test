@@ -16,9 +16,6 @@ use App\Http\Controllers\DepartmentController;
 |
 */
 
-
-Route::get('/', GridController::class);
-
-Route::resource('employees', EmployeeController::class);
-
-Route::resource('departments', DepartmentController::class);
+Route::get('{any}', function () {
+    return view('index');
+})->where('any','.*');
