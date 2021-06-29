@@ -16,10 +16,13 @@ class DepartmentSeeder extends Seeder
     {
         $inputs = [];
         $inputs[] = [
-            'name'  => 'Бухгалтерия',
+            'name'  => 'Отдел закупок',
         ];
         $inputs[] = [
-            'name'  => 'Разработка',
+            'name'  => 'Отдел продаж',
+        ];
+        $inputs[] = [
+            'name'  => 'PR-отдел',
         ];
         DB::table('departments')->insert($inputs);
     }

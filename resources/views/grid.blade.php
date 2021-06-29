@@ -21,7 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        <div class="relative flex items-top justify-center min-h-screen">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -37,7 +37,17 @@
             @endif
 
             <div class="container">
-
+                @foreach($employees as $employee)
+                    {{$employee->first_name}}
+                    {{$employee->last_name}}
+                    @foreach ($employee->departments as $department)
+                        <br>
+                        {{ $department->name }}
+                    @endforeach
+                    <br>
+                    <br>
+                    <br>
+                @endforeach
             </div>
         </div>
     </body>
