@@ -22,8 +22,8 @@
                                 <td>{{$employee->sex}}</td>
                                 <td>{{$employee->salary}}</td>
                                 <td>@foreach($employee->departments as $department){{$loop->first ? '' : ', '}}{{$department->name}} @endforeach</td>
-                                <td></td>
-                                <td></td>
+                                <td><button>Редактировать</button></td>
+                                <td><button>Удалить</button></td>
                             </tr>
                         @endforeach
                     </table>
