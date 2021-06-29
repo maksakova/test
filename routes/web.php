@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GridController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,7 @@ use App\Http\Controllers\GridController;
 
 
 Route::get('/', GridController::class);
+
+Route::resource('employees', EmployeeController::class);
+
+Route::resource('departments', DepartmentController::class);

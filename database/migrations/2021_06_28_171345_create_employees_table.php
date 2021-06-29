@@ -19,7 +19,7 @@ class CreateEmployeesTable extends Migration
             $table->string('second_name')->nullable();
             $table->string('last_name');
             $table->string('sex')->nullable();
-            $table->string('salary')->nullable();
+            $table->integer('salary')->nullable();
             $table->timestamps();
         });
     }
